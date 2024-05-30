@@ -11,4 +11,5 @@ async def notify():
     scheduler = AsyncIOScheduler()
     scheduler.add_job(notification_function, 'interval', seconds=3)
     scheduler.start()
+    return 0
     # schedule.run_pending()
