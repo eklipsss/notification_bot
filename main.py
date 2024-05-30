@@ -505,9 +505,11 @@ async def cmd_start(message: types.Message, state: FSMContext)->None:
 #                 await update_date_task_for_pereodic(task[0], task[1], res_date)
 
 
+
+
 if __name__ == '__main__':
-    scheduler = AsyncIOScheduler()
-    scheduler.add_job(notification_function, 'interval', seconds=3)
-    scheduler.start()
+    # scheduler = AsyncIOScheduler()
+    # scheduler.add_job(notification_function, 'interval', seconds=3)
+    # scheduler.start()
     executor.start_polling(dp, skip_updates=True,
                            on_startup=on_startup)
