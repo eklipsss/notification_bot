@@ -15,6 +15,7 @@ from upload_google_drive import another_way, upload_file_on_drive, delete_files_
 from scripts import check_for_notification, add_days
 import aioschedule
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
+import uvicorn
 
 
 
@@ -513,3 +514,4 @@ if __name__ == '__main__':
     # scheduler.start()
     executor.start_polling(dp, skip_updates=True,
                            on_startup=on_startup)
+    uvicorn.run('server:app', host='0.0.0.0', port=5000, reload=True)
